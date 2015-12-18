@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track' => true %>
+<h2>Enter A Username and Password</h2>
+<%= form_for @admin do |f| %>
+  <p> Username <%= f.text_field :username %> </p>
+  <p> Password <%=f.text_field :password %> </p>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<p>Already An Admin?</p>
+<%= button_to 'Login', 'log_in_admin_path', method: :get, class: "waves-effect waves-light btn" %>
+<br>
+<p>Not An Admin?</p>
+<%= button_to 'New Party', '/', method: :get, class: "waves-effect waves-light btn" %>

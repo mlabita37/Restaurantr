@@ -1,0 +1,10 @@
+<h2>Add A New Party</h2>
+
+<%= form_for @party do |f| %>
+  <%= f.label :guest_total, "Number of Guests" %>
+  <%= f.text_field :guest_total %><br>
+  <%= f.label :top_number, "Table Number" %>
+  <%= f.text_field :top_number %><br>
+  <%= f.submit %>
+
+<% end %>

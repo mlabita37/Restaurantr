@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
+<h2>New Order</h2>
+<%= form_for @order do |f| %>
+<%= f.label :party_id %>
+<%= f.text_field :party_id %>
+<%= f.label :item_id %>
+<%= f.text_field :item_id %>
+<%= f.submit %>
+<% end %>
