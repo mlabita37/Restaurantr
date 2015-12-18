@@ -1,6 +1,4 @@
-<%= stylesheet_link_tag    'items', media: 'all', 'data-turbolinks-track' => true %>
-
-<h2>Menu</h2>
+<h2>Current Menu</h2>
 <table>
   <thead>
     <tr>
@@ -10,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-<% @items.each do |item| %>
+<% @item.each do |item| %>
     <tr>
       <td><% item.item_name %></td>
       <td><%= item.description %></td>

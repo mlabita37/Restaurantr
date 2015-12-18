@@ -1,7 +1,9 @@
 <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
 
-<h2>Welcome to Restaurant.r</h2>
+<h4>Welcome to Restaurant.r</h4>
 
 <%= button_to 'Admin Login', new_admin_path, method: :get, class: "waves-effect waves-light btn" %>
 <br>
 <%= button_to 'New Party', new_party_path, method: :get, class: "waves-effect waves-light btn" %>
+<br>
+<%= button_to 'View Menu', 'items/:id', method: :get, class: "waves-effect waves-light btn" %>

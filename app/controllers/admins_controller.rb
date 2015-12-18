@@ -1,40 +1,37 @@
 class AdminsController < ApplicationController
 
-  def index
-  end
+    def index
+    end
 
-  def create
-    user = Admin.create(admin_params)
-    redirect_to log_in_admin_path
-  end
+    def new
+      @admin = Admin.new
+    end
 
-  def new
-    @admin = Admin.new
-  end
+    def create
+      admin = Admin.create(admin_params)
+      if admin.save
+        session[:admin_id] = admin.id
+        redirect_to '/admins'
+      else
+        flash[:error] = admin.errors.full_messages
+        redirect_to new_admin_path
+      end
+    end
 
-  def edit
-    @admin = Admin.find(params[:id])
-  end
+    def log_in
+    end
 
-  def show
-    @admin = Admin.find(params[:id])
-  end
+    def menu
+      @items = Item.all
+    end
 
-  def update
-    admin = Admin.find(params[:id])
-    admin.update(admin_params)
-    redirect_to "/admins/#{admin.id}"
-  end
-
-  def destroy
-    admin = Admin.find(params[:id])
-    admin.destroy
-    redirect_to admins_path
-  end
+    def show
+      @items = Item.all
+    end
 
   private
     def admin_params
-      parameters = params.require(:admin).permit(:username, :password)
+      parameters = params.require(:admin).permit(:username, :password, :password_confirmation)
     end
 
 end
