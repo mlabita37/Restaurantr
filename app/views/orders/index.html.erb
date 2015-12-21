@@ -1,22 +1,16 @@
 <%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
-<div id="nav" class="twelve columns">
- <ul>
- <li><a class="button" href="/">Home</a></li>
- <li><a class="button" href="/admins">Admin</a></li>
- <li><a class="button" href="/items">Menu</a></li>
- <li><a class="button" href="/orders">Orders</a></li>
- <li><a class="button" href="/parties">Parties</a></li>
- </ul>
-</div>
+
 <h4>CURRENT ORDERS</h4>
 
 <table>
   <thead>
     <tr>
         <th>Order</th>
-        <th>Quantity</th>
         <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
         <th>Party</th>
+        <th>Time</th>
         <th></th>
         <th></th>
         <th>Paid</th>
@@ -26,15 +20,23 @@
 <% @orders.each do |order| %>
     <tr>
       <td><%= order.item.name %></td>
-      <td></td>
-      <td><%= (order.item.price * order.item.quantity)%></td>
+      <td><%= order.item.price %></td>
+      <td><%= order.quantity %></td>
+      <td><%= (order.item.price * order.quantity)%></td>
       <td><%= order.party_id %></td>
+      <% if order.created_at.to_time > 30.minutes.ago  %>
+      <td class="timestamp-start"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></td>
+      <% elsif order.created_at.to_time < 30.minutes.ago && order.created_at.to_time > 50.minutes.ago %>
+      <td class="timestamp-middle"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></td>
+      <% elsif order.created_at.to_time < 50.minutes.ago %>
+      <td class="timestamp-end"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></td>
+      <% end %>
       <td><%= button_to "Edit", ('orders#update'), method: :update, class: "button-primary" %></td>
       <td><%= button_to "Remove", order_path(order), method: :delete, class: "button-primary" %></td>
-      <% if order.party.is_paid == false %>
-      <td class="unpaid"><%= button_to "Cash Out", order_complete_path(order), method: :put %></td>
-      <% elsif order.party.is_paid == true %>
-      <td class="paid"><%= "PAID" %></td>
+      <% if order.party.is_paid == true %>
+      <td><%= button_to "Cash Out", order_complete_path(order), method: :put, class: "button-primary"  %></td>
+      <% elsif order.party.is_paid == false %>
+      <td class="paid">&nbsp;<%= "PAID" %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
       <% end %>
     </tr>
   <% end %>

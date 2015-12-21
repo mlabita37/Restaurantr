@@ -1,13 +1,5 @@
 <%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track' => true %>
-<div id="nav" class="twelve columns">
- <ul>
- <li><a class="button" href="/">Home</a></li>
- <li><a class="button" href="/admins">Admin</a></li>
- <li><a class="button" href="/items">Menu</a></li>
- <li><a class="button" href="/orders">Orders</a></li>
- <li><a class="button" href="/parties">Parties</a></li>
- </ul>
-</div>
+
 <h4>Admin Page</h4>
 <%=form_tag session_path do %>
   <%= text_field_tag :username, "Username"%>

@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   get '/log_in' => 'admins#log_in'
   get '/menu' => 'admins#menu'
-  get '/chefs' => 'orders#chefs'
+  get '/cashout' => 'orders#cashout'
   post "/session" => 'session#create'
   delete "/session" => 'session#destroy'
+
+  put '/order_complete/:id' => 'order#complete', as: "order_complete"
 
   root 'welcome#index'
 

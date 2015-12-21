@@ -12,3 +12,25 @@ h4 {
 table {
   margin: 0 auto;
 }
+
+
+.paid {
+  background-color: springgreen;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  margin-top: 30px;
+}
+td {
+  text-align: center;
+}
+
+.timestamp-start {
+  background-color: springgreen;
+}
+.timestamp-middle {
+  background-color: yellow;
+}
+.timestamp-end {
+  background-color: crimson;
+}

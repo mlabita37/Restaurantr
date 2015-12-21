@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
       @orders = Order.all
     end
 
+    def cashout
+      @order = Order.new
+    end
+
     def create
       Order.create(order_params)
       redirect_to orders_path
@@ -16,11 +20,11 @@ class OrdersController < ApplicationController
     end
 
     def show
-      @order= Order.find(params[:id])
+      @order = Order.find(params[:id])
     end
 
    def update
-      order= Order.find(params[:id])
+      order = Order.find(params[:id])
       order.update(order_params)
       redirect_to "/orders/#{order.id}"
     end
@@ -30,14 +34,11 @@ class OrdersController < ApplicationController
       redirect_to orders_path
     end
 
-    def chef
-
-    end
 
     private
 
     def order_params
-      params.require(:order).permit(:party_id, :item_id)
+      params.require(:order).permit(:party_id, :item_id, :quantity)
     end
 
 end
