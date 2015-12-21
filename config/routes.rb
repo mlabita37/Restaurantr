@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/log_in' => 'admins#log_in'
   get '/menu' => 'admins#menu'
+  get '/chefs' => 'orders#chefs'
   post "/session" => 'session#create'
   delete "/session" => 'session#destroy'
 

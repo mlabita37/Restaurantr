@@ -1,6 +1,15 @@
-body {
-  width: 80%;
+.container {
+  background-color: tomato;
   margin: 0 auto;
   text-align: center;
-  background-color: slategrey;
+}
+header {
+  width: 100%;
+  background-color: lightblue;
+}
+tr:nth-child(odd) {
+  color: #000;
+}
+h4 {
+  color: #fff;
 }

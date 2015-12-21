@@ -10,6 +10,29 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require normalize
+ *= require skeleton
  *= require_self
- *= require materialize
  */
+ #nav {
+  margin: 20px 0 20px 0;
+  display: inline;
+ }
+
+ #nav ul li {
+  display: inline;
+  margin-right: 20px;
+  margin-bottom: 130px;
+ }
+
+ #nav a {
+  text-decoration: none;
+ }
+
+ #nav a:hover {
+  background-color: #33C3F0;
+  color: white;
+ }
+ .button {
+   border-color: #fff;
+ }

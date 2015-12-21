@@ -1,4 +1,4 @@
 class Item < ActiveRecord::Base
-  belongs_to :admin
   has_many :orders
+  has_many :parties, through: :orders
 end

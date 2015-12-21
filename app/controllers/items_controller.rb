@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    items = Item.create(items_params)
+    items = Item.create(item_params)
     if items.save
       redirect_to items_path
     else
@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   def update
     items = Item.find(params[:id])
-    if items.update(items_params)
+    if items.update(item_params)
       redirect_to items_path
     else
       flash[:error] = items.errors.full_messages
@@ -36,14 +36,14 @@ class ItemsController < ApplicationController
     @items = Item.find(params[:id])
   end
 
-  def delete
-    items = Item.find(params[:id])
-    redirect_to items_path
+  def destroy
+    Item.delete(params[:id])
+    redirect_to 'admins/menu'
   end
 
 private
-  def items_params
-    params.require(:item).permit(:item_name, :price, :description)
+  def item_params
+    params.require(:item).permit(:name, :price, :description)
   end
 
 end

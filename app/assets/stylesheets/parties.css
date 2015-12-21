@@ -1,3 +1,14 @@
-// Place all the styles related to the parties controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  margin: 0 auto;
+  text-align: center;
+  background-color: tomato;
+}
+
+h4 {
+  color: #fff;
+  margin-top: 50px;
+}
+
+table {
+  margin-bottom: 50px;
+}

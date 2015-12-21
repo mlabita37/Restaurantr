@@ -1,12 +1,12 @@
 class PartiesController < ApplicationController
 
   def index
-    @parties = Party.new
+    @parties = Party.all
   end
 
   def create
     party = Party.create(party_params)
-    redirect_to new_party_path
+    redirect_to '/parties'
   end
 
   def new

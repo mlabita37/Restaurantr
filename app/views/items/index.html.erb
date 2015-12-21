@@ -1,10 +1,9 @@
 <%= stylesheet_link_tag    'items', media: 'all', 'data-turbolinks-track' => true %>
-
-<h2>Menu</h2>
-<table>
+<h4>Menu</h4>
+<table class="striped">
   <thead>
     <tr>
-        <th data-field="item_name">Name</th>
+        <th data-field="name">Name</th>
         <th data-field="price">Price</th>
         <th data-field="description">Description</th>
     </tr>
@@ -12,7 +11,7 @@
   <tbody>
 <% @items.each do |item| %>
     <tr>
-      <td><% item.item_name %></td>
+      <td><%= item.name %></td>
       <td><%= item.description %></td>
       <td><%= item.price %></td>
     </tr>

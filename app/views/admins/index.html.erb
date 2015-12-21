@@ -1,11 +1,17 @@
 <%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track' => true %>
-
-<h2>LoginTo Admin Page</h2>
+<div id="nav" class="twelve columns">
+ <ul>
+ <li><a class="button" href="/">Home</a></li>
+ <li><a class="button" href="/admins">Admin</a></li>
+ <li><a class="button" href="/items">Menu</a></li>
+ <li><a class="button" href="/orders">Orders</a></li>
+ <li><a class="button" href="/parties">Parties</a></li>
+ </ul>
+</div>
+<h4>Admin Page</h4>
 <%=form_tag session_path do %>
-<%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <%= text_field_tag :username, "Username"%>
+  <%= password_field_tag :password, "Password" %>
   <%= submit_tag "Log In", class: "btn btn-primary"%>
 <%end%>
 <br>
