@@ -14,20 +14,28 @@
   <thead>
     <tr>
         <th>Order</th>
+        <th>Quantity</th>
         <th>Price</th>
         <th>Party</th>
         <th></th>
         <th></th>
+        <th>Paid</th>
     </tr>
   </thead>
   <tbody>
 <% @orders.each do |order| %>
     <tr>
       <td><%= order.item.name %></td>
-      <td><%= order.item.price %></td>
+      <td></td>
+      <td><%= (order.item.price * order.item.quantity)%></td>
       <td><%= order.party_id %></td>
       <td><%= button_to "Edit", ('orders#update'), method: :update, class: "button-primary" %></td>
       <td><%= button_to "Remove", order_path(order), method: :delete, class: "button-primary" %></td>
+      <% if order.party.is_paid == false %>
+      <td class="unpaid"><%= button_to "Cash Out", order_complete_path(order), method: :put %></td>
+      <% elsif order.party.is_paid == true %>
+      <td class="paid"><%= "PAID" %></td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>
