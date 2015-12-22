@@ -3,9 +3,9 @@
 <h4>New Order</h4>
 <%= form_for @order do |f| %>
 <%= f.label :name %>
-<%= f.collection_select :item_id, Item.all, :id, :name, class: "u-full-width"%>
+<%= f.collection_select :item_id, Item.all, :id, :name, class: "select"%>
 <%= f.label :party_id %>
-<%= f.collection_select :party_id, Party.all, :id, :id, class: "u-full-width"%>
+<%= f.collection_select :party_id, Party.all, :id, :id, class: "select"%>
 <%= f.label :quantity %>
 <%= f.text_field :quantity %>
 <br>
