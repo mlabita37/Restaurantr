@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
-<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
+<%= button_to 'HOME', '/', method: :get, class: "button-primary order" %>
+<%= button_to 'Parties', parties_path, method: :get, class: "button-primary order" %>
 <h4>CURRENT ORDERS</h4>
 
   <% @orders.each do |order| %>
