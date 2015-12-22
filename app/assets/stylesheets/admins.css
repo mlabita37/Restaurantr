@@ -13,20 +13,18 @@ label {
   text-align: left;
   float:left;
 }
-#nav {
- margin: 20px 0 40px 0;
+.order {
+  background-color: lightslategrey;
+  margin:0 auto 20px;
+  padding: 10px 0;
+  font-size: 1.25em;
+  text-align: center;
 }
 
-#nav ul li {
- display: inline;
- margin-right: 20px;
- margin-bottom: 130px;
+.item-name {
+  color: royalblue;
+  font-weight: bold;
 }
-
-#nav a {
- text-decoration: none;
-}
-
-#nav a:hover {
- text-decoration: underline;
+p {
+  color:white;
 }

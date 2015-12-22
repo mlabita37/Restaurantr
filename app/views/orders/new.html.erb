@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
-
+<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
 <h4>New Order</h4>
 <%= form_for @order do |f| %>
 <%= f.label :name %>

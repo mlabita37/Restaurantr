@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag    'parties', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'parties', 'data-turbolinks-track' => true %>
+<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
 <h4>Bill For Party Number: <%= @party.id %></h4>
 
 <table>
@@ -24,3 +25,5 @@
 <% end %>
 </tbody>
 </table>
+<br>
+<%= button_to 'Orders', orders_path, method: :get, class: "button-primary" %>

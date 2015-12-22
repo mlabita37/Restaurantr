@@ -1,46 +1,27 @@
 <%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
-
+<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
 <h4>CURRENT ORDERS</h4>
 
-<table>
-  <thead>
-    <tr>
-        <th>Order</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Subtotal</th>
-        <th>Party</th>
-        <th>Time</th>
-        <th>Edit</th>
-        <th>Remove</th>
-        <th>Paid</th>
-    </tr>
-  </thead>
-  <tbody>
-<% @orders.each do |order| %>
-    <tr>
-      <td><%= order.item.name %></td>
-      <td><%= order.item.price %></td>
-      <td><%= order.quantity %></td>
-      <td><%= order.subtotal %></td>
-      <td><%= order.party_id %></td>
-      <% if order.created_at.to_time > 30.minutes.ago  %>
-      <td class="timestamp-start"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></td>
-      <% elsif order.created_at.to_time < 30.minutes.ago && order.created_at.to_time > 50.minutes.ago %>
-      <td class="timestamp-middle"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></td>
-      <% elsif order.created_at.to_time < 50.minutes.ago %>
-      <td class="timestamp-end"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></td>
-      <% end %>
-      <td><%= button_to "Edit", edit_order_path(order), method: :get, class: "button-primary" %></td>
-      <td><%= button_to "Remove", order_path(order), method: :delete, class: "button-primary" %></td>
-      <% if order.party.is_paid == true %>
-      <td class="paid">&nbsp;<%= "PAID" %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      <% elsif order.party.is_paid == false %>
-      <td class="unpaid">&nbsp;<%= "OPEN" %>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-      <% end %>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-<br>
+  <% @orders.each do |order| %>
+<div class="container order">
+<div class="row">
+   <div class="twelve columns"><span class="black">Item: </span><%= order.item.name %></div>
+   <div class="twelve columns"><span class="black">Price: </span><%= order.item.price %></div>
+   <div class="twelve columns"><span class="black">Quantity: </span><%= order.quantity %></div>
+   <div class="twelve columns"><span class="black">Subtotal: </span><%= order.subtotal %></div>
+   <div class="twelve columns"><span class="black">Party: </span><%= order.party_id %></div>
+</div>
+ <div class="row">
+   <% if order.created_at.to_time > 30.minutes.ago  %>
+   <div class="four column green"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></div>
+   <% elsif order.created_at.to_time < 30.minutes.ago && order.created_at.to_time > 50.minutes.ago %>
+   <div class="four column yellow"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></div>
+   <% elsif order.created_at.to_time < 50.minutes.ago %>
+   <div class="four column red"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></div>
+   <% end %>
+   <div class="four column edit"><%= button_to "Edit", edit_order_path(order), method: :get, class: "button-primary edit_button" %></div>
+   <div class="four column remove"><td><%= button_to "Remove", order_path(order), method: :delete, class: "button-primary edit_button" %></td></div>
+</div>
+</div>
+<% end %>
 <%= button_to 'New Order', new_order_path, method: :get, class: "button-primary order " %>

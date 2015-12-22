@@ -1,14 +1,5 @@
 .container {
   margin: 0 auto;
   text-align: center;
-}
-header {
-  width: 100%;
-  background-color: lightblue;
-}
-tr:nth-child(odd) {
-  color: #000;
-}
-h4 {
   color: #fff;
 }

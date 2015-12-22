@@ -1,0 +1,8 @@
+<h2>Update Order</h2>
+
+<%= form_for @items do |f| %>
+  <p> Name <%= f.text_field :name %> </p>
+  <p> Description <%= f.text_field :description %> </p>
+  <p> Price <%= f.text_field :price %> </p>
+  <%= f.submit %>
+<% end%>

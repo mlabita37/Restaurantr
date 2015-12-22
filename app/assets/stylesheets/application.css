@@ -18,26 +18,18 @@
 body {
     background-color: #333;
 }
+::-webkit-input-placeholder {
+   color: red;
+}
 
- #nav {
-  margin: 20px 0 20px 0;
-  display: inline;
- }
+:-moz-placeholder { /* Firefox 18- */
+   color: red;
+}
 
- #nav ul li {
-  display: inline;
-  margin-right: 20px;
-  margin-bottom: 130px;
- }
+::-moz-placeholder {  /* Firefox 19+ */
+   color: red;
+}
 
- #nav a {
-  text-decoration: none;
- }
-
- #nav a:hover {
-  background-color: #33C3F0;
-  color: white;
- }
- .button {
-   border-color: #fff;
- }
+:-ms-input-placeholder {
+   color: red;
+}

@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag   'admins', media: 'all', 'data-turbolinks-track' => true %>
+<%= button_to 'HOME', '/', method: :get, class: "button-primary" %>
 <h4>New Admin</h4>
 <%= form_for @admin do |f| %>
 <%= f.text_field :username %>

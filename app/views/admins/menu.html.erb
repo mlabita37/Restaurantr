@@ -1,24 +1,25 @@
 <%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track' => true %>
+<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
 <h4>Update Menu</h4>
-<table class="striped">
-  <thead>
-    <tr>
-        <th data-field="name">Name</th>
-        <th data-field="price">Price</th>
-        <th data-field="description">Description</th>
-        <th data-field="edit">Edit</th>
-        <th data-field="remove">Remove</th>
-    </tr>
-  </thead>
-  <tbody>
+
 <% @items.each do |item| %>
-    <tr>
-      <td><%= item.name %></td>
-      <td><%= item.description %></td>
-      <td><%= item.price %></td>
-      <td><%= button_to "Remove", item_path(item), method: :delete%></td>
-      <td>Edit</td>
-    </tr>
+    <div class="container order">
+      <div class="row">
+      <div class="twelve columns"><span class="item-name"><%= item.name %></strong></div>
+      </div>
+      <div class="row">
+      <div class="twelve columns"><%= item.description %></div>
+      </div>
+      <div class="row">
+      <div class="twelve columns"><%= item.price %></div>
+      </div>
+      <div class="row">
+      <div class="twelve columns"><%= button_to "Remove", item_path(item), method: :delete, class: "button-primary"%></div>
+      </div>
+      <div class="row">
+      <div class="twelve columns"><%= button_to "Edit", edit_item_path(item), method: :get, class: "button-primary" %></div>
+      </div>
+    </div>
   <% end %>
   </tbody>
 </table>

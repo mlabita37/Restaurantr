@@ -1,10 +1,9 @@
 <%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track' => true %>
-
+<%= button_to 'HOME', '/', method: :get, class: "button-primary" %>
 <h4>Admin Page</h4>
 <%=form_tag session_path do %>
   <%= text_field_tag :username, "Username"%>
   <%= password_field_tag :password, "Password" %>
-  <%= submit_tag "Log In", class: "btn btn-primary"%>
+  <%= submit_tag "Log In", class: "button-primary"%>
 <%end%>
 <br>
-<%= button_to 'NEW ADMIN', '/admins/new', method: :get, class: "waves-effect waves-light btn" %>

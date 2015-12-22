@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
   text-align: center;
-  color: white;
+  color: whitesmoke;
 }
 
 h4 {
@@ -43,19 +43,37 @@ td {
 }
 
 .order {
-  background-color: lightblue;
-  margin-bottom: 20px;
+  width: 100%;
+  background-color: lightslategrey;
+  margin:0 auto 20px;
   padding: 10px 0;
+  font-size: 1.25em;
+  text-align: center;
 }
 
-#red {
+.red {
   background-color:red;
 }
 
-#yellow {
+.yellow {
   background-color: yellow;
 }
 
-#green {
+.green {
   background-color: green;
+}
+.black {
+  color: darkslategrey;
+}
+
+a .edit {
+  background-color: lightblue;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] , .edit_button {
+  margin: 15px auto 0;
+}
+@media (min-width: 550px)
+.column, .columns {
+    margin: 0;
 }

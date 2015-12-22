@@ -1,2 +1,8 @@
 <%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track' => true %>
-<h2>Update the Menu!</h2>
+<h2>Update Admin</h2>
+
+<%= form_for @admin do |f| %>
+<%= f.text_field :username %>
+<%=f.text_field :password %>
+<%= f.submit :class => "button-primary" %>
+<% end %>
