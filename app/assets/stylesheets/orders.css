@@ -78,3 +78,7 @@ a .edit {
 .button, button, input[type="submit"], input[type="reset"], input[type="button"] , .edit_button {
   margin: 15px auto 0;
 }
+
+.new-order {
+  color: black;
+}
