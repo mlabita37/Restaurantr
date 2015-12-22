@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post "/session" => 'session#create'
   delete "/session" => 'session#destroy'
 
+  put 'parties/:id/pay' => 'parties#pay', as: :pay
+
   put '/order_complete/:id' => 'order#complete', as: "order_complete"
 
   root 'welcome#index'

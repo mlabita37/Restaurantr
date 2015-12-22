@@ -13,10 +13,26 @@ class PartiesController < ApplicationController
     @party = Party.new
   end
 
+  def show
+    @party = Party.find(params[:id])
+    # orders = Order.all
+
+    # @orders = Order.where(party_id: "#{@party.id}").all
+  end
+
   def update
     party = Party.find(party_params)
   end
 
+  def destroy
+    Party.delete(params[:id])
+    redirect_to parties_path
+  end
+
+  def pay
+  party = Party.find(params[:id])
+  party.update_attribute(:is_paid, "true")
+  end
 
   private
   def party_params

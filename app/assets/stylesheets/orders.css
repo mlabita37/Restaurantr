@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
-  background-color: tomato;
   text-align: center;
+  color: white;
 }
 
 h4 {
@@ -13,6 +13,9 @@ table {
   margin: 0 auto;
 }
 
+.unpaid {
+  background-color: crimson;
+}
 
 .paid {
   background-color: springgreen;
@@ -20,6 +23,10 @@ table {
 
 .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
   margin-top: 30px;
+}
+
+th {
+  text-align: center;
 }
 td {
   text-align: center;
@@ -33,4 +40,22 @@ td {
 }
 .timestamp-end {
   background-color: crimson;
+}
+
+.order {
+  background-color: lightblue;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+#red {
+  background-color:red;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#green {
+  background-color: green;
 }

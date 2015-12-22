@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
     def index
       @order = Order.new
-      @orders = Order.all
+      @orders = Order.order('created_at ASC').all
     end
 
     def cashout
@@ -26,7 +26,11 @@ class OrdersController < ApplicationController
    def update
       order = Order.find(params[:id])
       order.update(order_params)
-      redirect_to "/orders/#{order.id}"
+      redirect_to "/orders"
+    end
+
+    def edit
+      @orders = Order.find(params[:id])
     end
 
     def destroy

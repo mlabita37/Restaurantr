@@ -1,7 +1,6 @@
-<%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
+<h2>Update Order</h2>
 
-<h4>New Order</h4>
-<%= form_for @order do |f| %>
+<%= form_for @orders do |f| %>
 <%= f.label :name %>
 <%= f.collection_select :item_id, Item.all, :id, :name, class: "u-full-width"%>
 <%= f.label :party_id %>

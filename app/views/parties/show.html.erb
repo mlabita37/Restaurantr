@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag    'parties', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'parties', 'data-turbolinks-track' => true %>
+<h4>Bill For Party Number: <%= @party.id %></h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+      <th>Party</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @party.orders.each do |order| %>
+<tr>
+<td><%= order.item.name %></td>
+<td><%= order.item.price %></td>
+<td><%= order.quantity %></td>
+<td><%= order.subtotal %></td>
+<td><%= order.party_id %></td>
+</tr>
+<% end %>
+</tbody>
+</table>

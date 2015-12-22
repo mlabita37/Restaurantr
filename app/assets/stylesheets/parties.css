@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
   text-align: center;
-  background-color: tomato;
+  color: white;
 }
 
 h4 {
@@ -11,4 +11,20 @@ h4 {
 
 table {
   margin: 0 auto 50px;
+}
+th {
+  text-align: center;
+}
+td {
+  text-align: center;
+}
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  margin-top: 30px;
+}
+.cashout {
+  text-decoration: none;
+  color: steelblue;
+}
+.cashout:hover {
+  color:#FFF;
 }

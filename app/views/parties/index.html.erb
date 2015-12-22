@@ -2,29 +2,28 @@
 
 <h2>Current Parties</h2>
 
-<table class="striped">
+<table>
   <thead>
     <tr>
-        <th data-field="guest_total">Guest Total</th>
-        <th data-field="top_number">Top Number</th>
+       <th>Party No.</th>
+        <th>Guest Total</th>
+        <th>Top Number</th>
+        <th>Cash Out</th>
+        <th></th>
     </tr>
   </thead>
   <tbody>
 <% @parties.each do |party| %>
     <tr>
+      <td><%= party.id %></td>
       <td><%= party.guest_total %></td>
       <td><%= party.top_number %></td>
+      <td><%= link_to "Cash Out", "/parties/#{party.id}", class: "cashout" %></td>
+      <td><%= button_to "Remove", party_path(party), method: :delete, class: "button-primary" %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-<div class="row">
-<div class="col s2"></div>
-<div class="col s4">
-<%= button_to 'NEW PARTY', '/parties/new', method: :get, class: "waves-effect waves-light btn" %>
-</div>
-<div class="col s4">
-<%= button_to 'NEW ORDER', '/orders', method: :get, class: "waves-effect waves-light btn" %>
-</div>
-<div class="col s2"></div>
-</div>
+
+<%= button_to 'NEW PARTY', '/parties/new', method: :get, class: "button-primary" %>
+<%= button_to 'NEW ORDER', '/orders', method: :get, class: "button-primary" %>
