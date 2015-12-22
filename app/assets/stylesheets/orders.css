@@ -1,10 +1,9 @@
 .container {
   margin: 0 auto;
   text-align: center;
+  color: black;
 }
-form {
-  color:black;
-}
+
 
 h4 {
   color: #fff;
