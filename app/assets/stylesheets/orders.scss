@@ -1,0 +1,32 @@
+// Place all the styles related to the session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #333333;
+}
+.row .four.columns {
+  text-align: center;
+}
+
+.row .four.columns.color {
+  background-color: #fae596;
+  margin-top: 20px;
+}
+.row .twelve.columns {
+  text-align: center;
+}
+.white {
+  color: #173e43;
+}
+.blue {
+  color: #3fb0ac;
+}
+.yellow {
+  color: goldenrod;
+}
+.green {
+  color: limegreen;
+}
+.red {
+  color: firebrick;
+}

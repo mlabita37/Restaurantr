@@ -1,0 +1,16 @@
+// Place all the styles related to the session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$white: white;
+$color: bisque;
+body{background: $color; text-align: center;}
+
+.white {
+  color: $white;
+}
+
+.party {
+  margin: 20px auto 0;
+  background-color: #333333;
+  text-align: center;
+}

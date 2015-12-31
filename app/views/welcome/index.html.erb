@@ -1,15 +1,24 @@
 <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
-
-<h4>Welcome to Restaurant.r</h4>
-
-<%= button_to 'Admin Login', new_admin_path, method: :get, class: "button-primary" %>
 <br>
-<%= button_to 'New Party', new_party_path, method: :get, class: "button-primary" %>
-<br>
-<%= button_to 'Parties', parties_path, method: :get, class: "button-primary" %>
-<br>
-<%= button_to 'New Order', new_order_path, method: :get, class: "button-primary" %>
-<br>
-<%= button_to 'Orders', orders_path, method: :get, class: "button-primary" %>
-<br>
-<%= button_to 'View Menu', '/items', method: :get, class: "button-primary" %>
+<div class="row">
+<div class="push_two two columns">
+<div class="medium primary btn pretty">
+<a href="/admins">Admin Login</a>
+</div>
+</div>
+<div class="two columns">
+<div class="medium primary btn pretty">
+<a href="/parties/new">New Party</a>
+</div>
+</div>
+<div class="two columns">
+<div class="medium primary btn pretty">
+<a href="/orders/new">New Order</a>
+</div>
+</div>
+<div class="pull_two columns">
+<div class="medium primary btn pretty">
+<a href="/orders">Orders</a>
+</div>
+</div>
+</div>

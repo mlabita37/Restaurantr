@@ -10,16 +10,19 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require normalize
- *= require skeleton
+ *
+ *
  *= require_self
+ *= require gumby
  */
-
-/*body {
-  background-color: #333;
-  color: black;
+#siteTitle {
+  font-size: 0.25em;
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
 
-select {
-  color: black;
-}*/
+.pretty.navbar.row   {
+  background-color: #3fb0ac;
+  background-image: none;
+}

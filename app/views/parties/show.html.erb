@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag    'parties', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'parties', 'data-turbolinks-track' => true %>
 <%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
+<%= button_to 'Orders', orders_path, method: :get, class: "button-primary" %>
 <h4>Bill For Party Number: <%= @party.id %></h4>
 
 <table>
@@ -26,4 +27,9 @@
 </tbody>
 </table>
 <br>
-<%= button_to 'Orders', orders_path, method: :get, class: "button-primary" %>
+
+<p>Order Subtotal: <%= @party.total %></p>
+<p>Tax: <%= '%.2f' % (@party.total * 0.09) %>
+<p>10% Tip: <%= '%.2f' % (@party.total + (@party.total * 0.09) * 0.10) %>
+<p>15% Tip: <%= '%.2f' % (@party.total + (@party.total * 0.15) + (@party.total * 0.09)) %>
+<p>20% Tip: <%= '%.2f' % (@party.total + (@party.total * 0.20) + (@party.total * 0.09)) %>

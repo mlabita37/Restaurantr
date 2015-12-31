@@ -7,4 +7,5 @@ class Order < ActiveRecord::Base
     item.price * quantity
   end
 
+
 end

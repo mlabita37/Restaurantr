@@ -59,6 +59,9 @@ GEM
       i18n (~> 0.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gumby-framework (0.0.1)
+      jquery-rails
+      modernizr-rails
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -79,6 +82,7 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    modernizr-rails (2.7.1)
     multi_json (1.11.2)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
@@ -166,9 +170,11 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   faker
+  gumby-framework
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  modernizr-rails
   pg (~> 0.15)
   pry-rails
   rails (= 4.2.5)

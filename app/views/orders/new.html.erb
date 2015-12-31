@@ -2,12 +2,33 @@
 <%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
 <h4>New Order</h4>
 <%= form_for @order do |f| %>
+
 <%= f.label :name %>
 <%= f.collection_select :item_id, Item.all, :id, :name, class: "select"%>
 <%= f.label :party_id %>
 <%= f.collection_select :party_id, Party.all, :id, :id, class: "select"%>
 <%= f.label :quantity %>
 <%= f.text_field :quantity %>
+<%= f.label :note %>
+<%= f.text_field :note %>
 <br>
 <%= f.submit :class => "button-primary" %>
 <% end %>
+
+
+
+
+<ul>
+  <li class="field">
+    <input class="input" type="text" placeholder="Text input" />
+  </li>
+  <li class="field">
+    <input class="input" type="email" placeholder="Email input" />
+  </li>
+  <li class="field">
+    <input class="input" type="password" placeholder="Password input" />
+  </li>
+  <li class="field">
+    <textarea class="input textarea" placeholder="Textarea"></textarea>
+  </li>
+</ul>

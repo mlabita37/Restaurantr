@@ -1,21 +1,20 @@
 <%= stylesheet_link_tag    'items', media: 'all', 'data-turbolinks-track' => true %>
-<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
 <h4>Menu</h4>
-<table class="striped">
-  <thead>
-    <tr>
-        <th data-field="name">Name</th>
-        <th data-field="price">Price</th>
-        <th data-field="description">Description</th>
-    </tr>
-  </thead>
-  <tbody>
 <% @items.each do |item| %>
-    <tr>
-      <td><%= item.name %></td>
-      <td><%= item.description %></td>
-      <td><%= item.price %></td>
-    </tr>
+    <div class="container order">
+      <div class="row">
+      <div class="push_three three columns"></div>
+      <div class="six columns menu"><strong><%= item.name %></strong></div>
+      <div class="pull_three three columns"></div>
+      </div>
+      <div class="row">
+      <div class="push_three three columns"></div>
+      <div class="six columns menu"><%= item.description %></div>
+      <div class="pull_three three columns"></div>
+      </div>
+      <div class="row">
+      <div class="three columns"></div>
+      <div class="six columns menu"><%= item.price %></div>
+      <div class="three columns"></div>
+      </div>
   <% end %>
-  </tbody>
-</table>

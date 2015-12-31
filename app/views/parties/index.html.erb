@@ -1,29 +1,13 @@
 <%= stylesheet_link_tag    'parties', media: 'all', 'data-turbolinks-track' => true %>
-<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
+
 <h2>Current Parties</h2>
 
-<table>
-  <thead>
-    <tr>
-       <th>Party No.</th>
-        <th>Guest Total</th>
-        <th>Top Number</th>
-        <th>Cash Out</th>
-        <th></th>
-    </tr>
-  </thead>
-  <tbody>
 <% @parties.each do |party| %>
-    <tr>
-      <td><%= party.id %></td>
-      <td><%= party.guest_total %></td>
-      <td><%= party.top_number %></td>
-      <td><%= link_to "Cash Out", "/parties/#{party.id}", class: "cashout" %></td>
-      <td><%= button_to "Remove", party_path(party), method: :delete, class: "button-primary" %></td>
-    </tr>
+    <div class="row party">
+      <div class="two columns"><span class="white">Party No:&nbsp;<%= party.id %></span></div>
+      <div class="two columns"><span class="white">Guests:&nbsp;<%= party.guest_total %></span></div>
+      <div class="two columns"><span class="white">Table No:&nbsp;<%= party.top_number %></span></div>
+      <div class="two columns"><%= link_to "Cash Out", "/parties/#{party.id}", class: "cashout" %></div>
+      <div class="two columns"><%= button_to "Remove", party_path(party), method: :delete, class: "button-primary" %></div>
+    </div>
   <% end %>
-  </tbody>
-</table>
-
-<%= button_to 'NEW PARTY', '/parties/new', method: :get, class: "button-primary" %>
-<%= button_to 'NEW ORDER', '/orders', method: :get, class: "button-primary" %>
