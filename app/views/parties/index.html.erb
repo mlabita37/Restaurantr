@@ -2,12 +2,17 @@
 
 <h2>Current Parties</h2>
 
-<% @parties.each do |party| %>
-    <div class="row party">
-      <div class="two columns"><span class="white">Party No:&nbsp;<%= party.id %></span></div>
-      <div class="two columns"><span class="white">Guests:&nbsp;<%= party.guest_total %></span></div>
-      <div class="two columns"><span class="white">Table No:&nbsp;<%= party.top_number %></span></div>
-      <div class="two columns"><%= link_to "Cash Out", "/parties/#{party.id}", class: "cashout" %></div>
-      <div class="two columns"><%= button_to "Remove", party_path(party), method: :delete, class: "button-primary" %></div>
+
+<% @parties.in_groups_of(3, false).each do |group| %>
+<div class="row order">
+ <% group.each do |party| %>
+ <div class="large-4 columns color">
+<span class="white">Party No:&nbsp;<%= party.id %></span><br>
+<span class="white">Guests:&nbsp;<%= party.guest_total %></span><br>
+<span class="white">Table No:&nbsp;<%= party.top_number %></span><br>
+<%= link_to "Cash Out", "/parties/#{party.id}", class: "cashout" %>
+<%= button_to "Remove", party_path(party), method: :delete, class: "button-primary" %>
     </div>
   <% end %>
+</div>
+<% end %>

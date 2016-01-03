@@ -1,34 +1,22 @@
 <%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
-<%= button_to 'HOME', '/', method: :get, class: "button-primary order " %>
-<h4>New Order</h4>
 <%= form_for @order do |f| %>
-
+<div class="row">
 <%= f.label :name %>
-<%= f.collection_select :item_id, Item.all, :id, :name, class: "select"%>
+<%= f.collection_select :item_id, Item.all, :id, :name, class: "medium-2 medium-centered columns"%>
+</div>
+<div class="row">
 <%= f.label :party_id %>
-<%= f.collection_select :party_id, Party.all, :id, :id, class: "select"%>
+<%= f.collection_select :party_id, Party.all, :id, :id, class: "medium-2 medium-centered columns"%>
+</div>
+<div class="row">
 <%= f.label :quantity %>
-<%= f.text_field :quantity %>
+<%= f.text_field :quantity, class: "medium-2 medium-centered columns" %>
+</div>
+<div class="row">
 <%= f.label :note %>
-<%= f.text_field :note %>
-<br>
-<%= f.submit :class => "button-primary" %>
+<%= f.text_field :note, class: "medium-2 medium-centered columns" %>
+</div>
+<div class="row">
+<%= f.submit :class => "medium-2 medium-centered columns" %>
+</div>
 <% end %>
-
-
-
-
-<ul>
-  <li class="field">
-    <input class="input" type="text" placeholder="Text input" />
-  </li>
-  <li class="field">
-    <input class="input" type="email" placeholder="Email input" />
-  </li>
-  <li class="field">
-    <input class="input" type="password" placeholder="Password input" />
-  </li>
-  <li class="field">
-    <textarea class="input textarea" placeholder="Textarea"></textarea>
-  </li>
-</ul>

@@ -6,7 +6,7 @@
   <% @orders.in_groups_of(3, false).each do |group| %>
   <div class="row order">
    <% group.each do |order| %>
-   <div class="four columns color">
+   <div class="large-4 columns color">
      <span class="white">Item: </span><span class="blue"><%= order.item.name %></span><br>
      <span class="white">Price: </span><span class="blue"><%= order.item.price %></span><br>
      <span class="white">Quantity: </span><span class="blue"><%= order.quantity %></span><br>
@@ -20,11 +20,10 @@
    <% elsif order.created_at.to_time < 30.minutes.ago %>
    <span class="red"><%= order.created_at.to_time.strftime('%l:%M %p %Z')%></span><br>
    <% end %>
-   <div class="medium primary btn">
-   <%= button_to " Edit ", edit_order_path(order), method: :get, class: "medium primary btn pretty" %>
-   </div>
-   <div class="medium primary btn">
-   <%= button_to " Remove ", order_path(order), method: :delete, class: "medium primary btn pretty" %>
+   <div class="row">
+   <br>
+   <div class="large-6 columns"><%= button_to " Edit ", edit_order_path(order), method: :get, type: "button", class: "button" %></div>
+   <div class="large-6 columns"><%= button_to " Remove ", order_path(order), method: :delete, type: "button", class: "alert button" %></div>
    </div>
  </div>
 <% end %>

@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require modernizr
-//= require gumby
-//= require ui/gumby.checkbox
-//= require ui/gumby.radiobtn
+//
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
+
+$(function(){ $(document).foundation(); });

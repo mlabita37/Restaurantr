@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228223302) do
+ActiveRecord::Schema.define(version: 20160103171713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,24 @@ ActiveRecord::Schema.define(version: 20151228223302) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.text     "address1"
+    t.text     "address2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "phone_number"
+    t.integer  "dob"
+    t.string   "job_title"
+    t.boolean  "is_admin",     default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "items", force: :cascade do |t|
@@ -49,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151228223302) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "is_paid",     default: false
+    t.string   "name"
   end
 
   add_foreign_key "orders", "items"

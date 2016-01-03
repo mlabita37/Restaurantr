@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :items
   resources :orders
   resources :admins
+  resources :employees
 
   get '/log_in' => 'admins#log_in'
   get '/menu' => 'admins#menu'
