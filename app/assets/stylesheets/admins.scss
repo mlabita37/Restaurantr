@@ -1,9 +1,14 @@
 // Place all the styles related to the session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$bisque: bisque;
 
 body {
+  background-color: $bisque;
   text-align: center;
+}
+h4 {
+  margin-top: 30px;
 }
 .four .columns {
   text-align: center;

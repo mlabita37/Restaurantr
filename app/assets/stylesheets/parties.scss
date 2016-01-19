@@ -3,7 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $white: white;
 $color: bisque;
-body{background: $color; text-align: center;}
+
+body {
+  background: $color;
+  text-align: center;
+}
+
+h4{
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-top: 30px;
+}
 
 .white {
   color: $white;
@@ -13,4 +23,64 @@ body{background: $color; text-align: center;}
   margin: 20px auto 0;
   background-color: #333333;
   text-align: center;
+}
+
+#modal {
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+#close-modal {
+  float: right;
+}
+
+#close-modal:hover{
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  margin: 0 auto;
+  background-color: white;
+  top: 150px;
+  width: 40%;
+}
+
+.modal-header {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+}
+
+.modal-body {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  background-color: white;
+  border-top: 2px solid black;
+}
+
+img {
+  width: 100%;
+}
+
+h3 {
+  display: inline-block;
+}
+
+.total {
+  margin-top: 20px;
+  color: ligthslategrey;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.bill {
+  text-align: center;
+  line-height: 2em;
 }

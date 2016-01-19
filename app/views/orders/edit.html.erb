@@ -1,12 +1,20 @@
-<h2>Update Order</h2>
+<h4>Update Order</h4>
 
 <%= form_for @orders do |f| %>
+<div class="row">
+<div class="four columns">
 <%= f.label :name %>
 <%= f.collection_select :item_id, Item.all, :id, :name, class: "u-full-width"%>
+</div>
+<div class="four columns">
 <%= f.label :party_id %>
 <%= f.collection_select :party_id, Party.all, :id, :id, class: "u-full-width"%>
+</div>
+<div class="four columns">
 <%= f.label :quantity %>
 <%= f.text_field :quantity %>
-<br>
-<%= f.submit :class => "button-primary" %>
+</div>
+<div class="four columns">
+<%= f.submit :class => "button submit" %>
+</div>
 <% end %>

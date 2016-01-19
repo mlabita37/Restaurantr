@@ -15,7 +15,6 @@ class PartiesController < ApplicationController
 
   def show
     @party = Party.find(params[:id])
-
   end
 
   def update
@@ -30,6 +29,18 @@ class PartiesController < ApplicationController
   def pay
   party = Party.find(params[:id])
   party.update_attribute(:is_paid, "true")
+  end
+
+  def euro
+  party = Party.find(params[:id])
+  party.update({euro: true})
+  redirect_to "/parties/#{party.id}"
+  end
+
+  def american
+  party = Party.find(params[:id])
+  party.update({euro: false})
+  redirect_to "/parties/#{party.id}"
   end
 
   private

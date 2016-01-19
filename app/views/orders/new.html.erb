@@ -1,22 +1,16 @@
 <%= stylesheet_link_tag    'orders', media: 'all', 'data-turbolinks-track' => true %>
+<h4 class="white">New Order</h4>
+<br>
 <%= form_for @order do |f| %>
 <div class="row">
-<%= f.label :name %>
-<%= f.collection_select :item_id, Item.all, :id, :name, class: "medium-2 medium-centered columns"%>
-</div>
-<div class="row">
-<%= f.label :party_id %>
-<%= f.collection_select :party_id, Party.all, :id, :id, class: "medium-2 medium-centered columns"%>
-</div>
-<div class="row">
-<%= f.label :quantity %>
-<%= f.text_field :quantity, class: "medium-2 medium-centered columns" %>
-</div>
-<div class="row">
-<%= f.label :note %>
-<%= f.text_field :note, class: "medium-2 medium-centered columns" %>
-</div>
-<div class="row">
-<%= f.submit :class => "medium-2 medium-centered columns" %>
+<%= f.label :name, class: "white" %>
+<%= f.collection_select :item_id, Item.all, :id, :name, class: "twelve columns"%><br>
+<%= f.label :party_id, class: "white" %>
+<%= f.collection_select :party_id, Party.all, :id, :id, class: "twelve columns"%><br>
+<%= f.label :quantity, class:"white" %>
+<%= f.text_field :quantity, class: "twelve columns" %><br>
+<%= f.label :note, class: "white" %>
+<%= f.text_field :note, class: "twelve columns" %><br>
+<%= f.submit :class => "button submit" %>
 </div>
 <% end %>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :employees
 
-  get '/log_in' => 'admins#log_in'
+  get '/login' => 'employees#log_in'
   get '/menu' => 'admins#menu'
   get '/cashout' => 'orders#cashout'
   post "/session" => 'session#create'
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   put 'parties/:id/pay' => 'parties#pay', as: :pay
 
   put '/order_complete/:id' => 'order#complete', as: "order_complete"
+  put '/party_euro/:id' => 'parties#euro', as: "party_euro"
+  put '/party_american/:id' => 'parties#american', as: "party_american"
 
   root 'welcome#index'
 

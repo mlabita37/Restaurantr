@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160103171713) do
+ActiveRecord::Schema.define(version: 20160104010716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160103171713) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "username"
-    t.string   "password"
+    t.string   "password_digest"
     t.string   "firstname"
     t.string   "lastname"
     t.text     "address1"
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20160103171713) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.integer  "phone_number"
-    t.integer  "dob"
+    t.string   "phone_number"
     t.string   "job_title"
-    t.boolean  "is_admin",     default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "is_admin",        default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.date     "dob"
   end
 
   create_table "items", force: :cascade do |t|
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160103171713) do
     t.datetime "updated_at",                  null: false
     t.boolean  "is_paid",     default: false
     t.string   "name"
+    t.boolean  "euro",        default: false
   end
 
   add_foreign_key "orders", "items"

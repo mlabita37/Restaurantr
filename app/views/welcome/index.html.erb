@@ -1,2 +1,20 @@
 <%= stylesheet_link_tag    'welcome', media: 'all', 'data-turbolinks-track' => true %>
 <h4>Employee Login</h4>
+<%=form_tag session_path do %>
+<div class="row">
+  <div class="large-6 columns">
+  <label>Username
+  <%= text_field_tag :username %>
+</label>
+</div>
+<div class="large-6 columns">
+  <label>Password</label>
+  <%= password_field_tag :password %>
+</label>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+  <%= submit_tag "Log In", class: "button submit"%>
+  </div>
+</div>
+<%end%>

@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-
+before_filter :confirm_logged_in, :only => [:show]
   def index
   end
 

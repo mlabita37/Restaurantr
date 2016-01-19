@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag    'parties', media: 'all', 'data-turbolinks-track' => true %>
-
+<%= javascript_include_tag 'parties', 'data-turbolinks-track' => true %>
 <h2>Current Parties</h2>
 
 
@@ -8,6 +8,7 @@
  <% group.each do |party| %>
  <div class="large-4 columns color">
 <span class="white">Party No:&nbsp;<%= party.id %></span><br>
+<span class="white">Party Name:<%= party.name %></span><br>
 <span class="white">Guests:&nbsp;<%= party.guest_total %></span><br>
 <span class="white">Table No:&nbsp;<%= party.top_number %></span><br>
 <%= link_to "Cash Out", "/parties/#{party.id}", class: "cashout" %>
@@ -16,3 +17,19 @@
   <% end %>
 </div>
 <% end %>
+
+
+
+<div id="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3> MODAL TIME!!! </h3>
+      <div id="close-modal"> X </div>
+    </div>
+    <div class="modal-body">
+        <input id="img-url"/>
+        <button id="submit-btn"> Submit </button>
+      </div>
+    </div>
+</div>
+<button id="open-modal"> Open My Modal </button>

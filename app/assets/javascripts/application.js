@@ -14,6 +14,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 
-$(function(){ $(document).foundation(); });
+
+console.log("ready");
+window.onload = function() {
+$(document).foundation();
+};

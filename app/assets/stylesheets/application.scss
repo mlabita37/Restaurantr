@@ -15,6 +15,7 @@
  *= require_self
  //= require foundation_and_overrides
  */
+
 #siteTitle {
   font-size: 0.25em;
   color: white;
@@ -22,20 +23,16 @@
   font-weight: bold;
 }
 
-.pretty.navbar.row   {
-  background-color: #3fb0ac;
-  background-image: none;
-}
-
-
 .color {
   background-color: lightgrey;
-  margin: 10px auto;
+  margin-top: 10px;
   padding: 20px;
-  border: #333 solid 5px;
+  border: white solid 5px;
   text-align: center;
   line-height: 30px;
+  min-height: 300px;
 }
+
 h4 {
   color: white;
 }

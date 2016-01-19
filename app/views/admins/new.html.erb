@@ -1,12 +1,14 @@
 <%= stylesheet_link_tag   'admins', media: 'all', 'data-turbolinks-track' => true %>
-<%= button_to 'HOME', '/', method: :get, class: "button-primary" %>
 <h4>New Admin</h4>
 <%= form_for @admin do |f| %>
-<%= f.text_field :username %>
-<%=f.text_field :password %>
-  <%= f.submit :class => "button-primary" %>
+  <div class="row">
+    <div class="four columns">
+      <%= f.text_field :username %>
+    </div>
+  <div class="four columns">
+    <%=f.text_field :password %>
+  </div>
+  <div class="four columns">
+    <%= f.submit :class => "button submit" %>
+  </div>
 <% end %>
-
-<br>
-<p>Already An Admin?</p>
-<%= button_to 'Login', 'admin_path', method: :get, class: "button-primary" %>

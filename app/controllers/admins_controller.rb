@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-
+before_filter :confirm_logged_in, :only => [:show]
     def index
     end
 
@@ -11,7 +11,7 @@ class AdminsController < ApplicationController
       admin = Admin.create(admin_params)
       if admin.save
         session[:admin_id] = admin.id
-        redirect_to '/admins'
+        redirect_to '/admins/log_in'
       else
         flash[:error] = admin.errors.full_messages
         redirect_to new_admin_path

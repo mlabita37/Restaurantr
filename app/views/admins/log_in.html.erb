@@ -1,7 +1,9 @@
 <%= stylesheet_link_tag    'admins', media: 'all', 'data-turbolinks-track' => true %>
 <h4>Login</h4>
-<%= form_tag session_path do %>
-  <%= text_field_tag :admin_name %>
+<%=form_tag session_path do %>
+  <p>Username</p>
+  <%= text_field_tag :username %>
+  <p>Password</p>
   <%= password_field_tag :password %>
-  <%= submit_tag "LogIn" %>
-<% end %>
+  <%= submit_tag "Log In", class: "button-primary"%>
+<%end%>

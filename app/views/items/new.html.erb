@@ -1,8 +1,24 @@
 <%= stylesheet_link_tag    'items', media: 'all', 'data-turbolinks-track' => true %>
-
+<h4>New Menu Item</h4>
 <%= form_for @items do |f| %>
-  <p> Name <%= f.text_field :name %> </p>
-  <p> Description <%= f.text_field :description %> </p>
-  <p> Price <%= f.text_field :price %> </p>
-  <%= f.submit %>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Name
+        <%= f.text_field :name %>
+      </label>
+    </div>
+    <div class="large-6 columns">
+      <label> Price <%= f.text_field :price %>
+      </label>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <label> Description
+          <%= f.text_field :description %>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.submit %>
+    </div>
 <% end%>

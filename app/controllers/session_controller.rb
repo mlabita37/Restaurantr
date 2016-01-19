@@ -1,16 +1,18 @@
 class SessionController < ApplicationController
+  def new
+  end
   def create
-    admin = Admin.find_by_username(params[:username])
-    if admin && admin.authenticate(params[:password])
-      session[:admin_id] = admin.id
-      redirect_to menu_path
+    employee = Employee.find_by_username(params[:username])
+    if employee && employee.authenticate(params[:password])
+      session[:employee_id] = employee.id
+      redirect_to employees_path
     else
       redirect_to log_in_path
     end
   end
 
   def destroy
-    session[:admin_id] = nil
+    session[:employee_id] = nil
     redirect_to log_in_path
   end
 end
