@@ -1,28 +1,34 @@
-== README
+###Ruby version
+ Ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin15]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###System dependencies
+* Postgresql
+* SCSS
+* Uglifier
+* Foundation Rails
+* JQuery Rails
+* Turbo Links
+* JBuilder
+* Sdoc
+* Bcrypt
+* Byebug
+* Web Console
+* Pry Rails
+*Awesome Print
+* Spring
 
-Things you may want to cover:
+###Database creation
+The application uses four databases which include employees, menu items, orders, and parties. The employees table uses an isAdmin column to grant administrator status. Admins can add/remove both employees and menu items.
 
-* Ruby version
-## ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin15]
-* System dependencies
+###Database initialization
 
-* Configuration
+###How to run the test suite
 
-* Database creation
+###Services (job queues, cache servers, search engines, etc.)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+###Deployment instructions
+1.     Pull the project down from GitHub using git clone<br>
+2.     Change into the project directory using cd [project_name]<br>
+3.     Install the gems using bundle install<br>
+4.     Create the database rake db:create<br>
+5.     Run the migrations rake db:migrate<br>
