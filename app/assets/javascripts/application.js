@@ -17,6 +17,10 @@
 
 
 console.log("ready");
-window.onload = function() {
-$(document).foundation();
-};
+
+$(function(){ $(document).foundation(); });
+
+
+// window.onload = function() {
+// $(document).foundation();
+// };
