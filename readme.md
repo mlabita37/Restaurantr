@@ -19,6 +19,7 @@
 
 ###Database creation
 The application uses four databases which include employees, menu items, orders, and parties. The employees table uses an isAdmin column to grant administrator status. Admins can add/remove both employees and menu items.
+
 ![alt tag](images/ServrDB.gif)
 
 ###Database initialization
